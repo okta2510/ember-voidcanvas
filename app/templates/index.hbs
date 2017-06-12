@@ -1,0 +1,15 @@
+<h3>print : {{myVal}}</h3>
+<p>{{sum 1 1}}</p>
+<p>
+	<h1 {{action "triggerMe" allowedKeys="shift"}}>Hello {{{myVal}}}.</h1>
+	{{input value=myVal}}
+	<ol>
+		{{#each students as |student index|}}
+		    <li {{action "triggerMe" student.name}}>The student no {{index}} is {{student.name}}</li>
+		{{/each}}
+	</ol>
+</p>
+
+<p>{{#each-in marks as |subject mark|}}
+    Score in {{subject}} is {{mark}}
+{{/each-in}}</p>
