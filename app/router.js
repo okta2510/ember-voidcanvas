@@ -16,6 +16,7 @@ Router.map(function() {
     this.route('old',{path : '/old/:id'});
   });
   this.route('page-not-found',{path:'/*wildcard'});
+  this.route('my-component-route');
 });
 
 export default Router;

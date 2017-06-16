@@ -1,0 +1,21 @@
+<!-- <h1>It's My-Component-Route</h1>
+{{#each model key="index" as |student index| }}
+  {{#student-detail-component firstName=student.firstName lastName=student.lastName}}
+      <h5>This is details of student No: {{index}} </h5>
+  {{/student-detail-component}}
+  <br />
+{{/each}} -->
+
+
+
+<h1>It's My-Component-Route</h1>
+{{#each model as |student index| }}
+    {{#student-detail-component student.firstName student.lastName}}
+        <h5>This is details of student No: {{index}} </h5>
+    {{/student-detail-component}}
+    <br>
+    {{#student-detail-component editStyle="markdown-style" firstName=student.firstName lastName=student.lastName as |student|}}
+      <p>By the way, I know the fullName is {{student.fullName}}</p>
+    {{/student-detail-component}}
+    <br><hr />
+{{/each}}
